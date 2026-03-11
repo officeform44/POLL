@@ -1,0 +1,301 @@
+‎<!DOCTYPE html>
+‎<html lang="en">
+‎<head>
+‎<meta charset="UTF-8">
+‎<meta name="viewport" content="width=device-width, initial-scale=1.0">
+‎
+‎<title>Moderator Election</title>
+‎
+‎<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+‎
+‎<style>
+‎
+‎*{
+‎margin:0;
+‎padding:0;
+‎box-sizing:border-box;
+‎font-family:'Poppins',sans-serif;
+‎}
+‎
+‎body{
+‎background:linear-gradient(135deg,#141e30,#243b55);
+‎color:white;
+‎min-height:100vh;
+‎scroll-behavior:smooth;
+‎}
+‎
+‎/* title */
+‎
+‎header{
+‎text-align:center;
+‎padding:40px;
+‎}
+‎
+‎.title{
+‎font-size:42px;
+‎font-weight:700;
+‎letter-spacing:4px;
+‎text-shadow:
+‎2px 2px 0 #000,
+‎4px 4px 10px rgba(0,0,0,0.6),
+‎0 0 25px rgba(255,255,255,0.4);
+‎}
+‎
+‎/* container */
+‎
+‎.container{
+‎max-width:1000px;
+‎margin:auto;
+‎padding:20px;
+‎}
+‎
+‎/* card */
+‎
+‎.card{
+‎background:rgba(255,255,255,0.08);
+‎backdrop-filter:blur(10px);
+‎border-radius:20px;
+‎padding:25px;
+‎margin-bottom:25px;
+‎box-shadow:0 10px 40px rgba(0,0,0,0.3);
+‎transition:0.3s;
+‎}
+‎
+‎.card:hover{
+‎transform:translateY(-8px);
+‎}
+‎
+‎.name{
+‎font-size:24px;
+‎font-weight:600;
+‎}
+‎
+‎.position{
+‎display:inline-block;
+‎margin-top:6px;
+‎margin-bottom:10px;
+‎padding:5px 12px;
+‎border-radius:20px;
+‎background:linear-gradient(45deg,#ff7e5f,#feb47b);
+‎font-size:12px;
+‎}
+‎
+‎.vote{
+‎margin-bottom:10px;
+‎}
+‎
+‎.people{
+‎font-size:14px;
+‎margin-top:10px;
+‎}
+‎
+‎/* vote button */
+‎
+‎.voteBtn{
+‎margin-top:15px;
+‎padding:10px 25px;
+‎border:none;
+‎border-radius:8px;
+‎background:linear-gradient(45deg,#00f2fe,#4facfe);
+‎color:black;
+‎font-weight:600;
+‎cursor:pointer;
+‎}
+‎
+‎.voteBtn:hover{
+‎transform:scale(1.05);
+‎box-shadow:0 0 15px cyan;
+‎}
+‎
+‎/* vote dashboard */
+‎
+‎#voteSection{
+‎display:none;
+‎padding:40px;
+‎}
+‎
+‎.formBox{
+‎max-width:500px;
+‎margin:auto;
+‎background:rgba(255,255,255,0.08);
+‎padding:25px;
+‎border-radius:15px;
+‎backdrop-filter:blur(10px);
+‎}
+‎
+‎input{
+‎width:100%;
+‎padding:10px;
+‎border:none;
+‎border-radius:6px;
+‎margin-top:10px;
+‎margin-bottom:15px;
+‎}
+‎
+‎.submitBtn{
+‎background:linear-gradient(45deg,#00f2fe,#4facfe);
+‎border:none;
+‎padding:12px;
+‎width:100%;
+‎border-radius:8px;
+‎font-weight:600;
+‎cursor:pointer;
+‎}
+‎
+‎.message{
+‎margin-top:15px;
+‎text-align:center;
+‎font-weight:600;
+‎}
+‎
+‎a{
+‎color:#00f2fe;
+‎text-decoration:none;
+‎}
+‎
+‎</style>
+‎
+‎</head>
+‎
+‎<body>
+‎
+‎<header>
+‎<div class="title">MODERATOR ELECTION</div>
+‎</header>
+‎
+‎<div class="container">
+‎
+‎<!-- Candidate 1 -->
+‎
+‎<div class="card">
+‎
+‎<div class="name">1. Emmanuel L Gonzalez</div>
+‎<div class="position">Running for: MODERATOR</div>
+‎
+‎<div class="vote">Votes: 19</div>
+‎
+‎<div class="people">
+‎Facebook:
+‎<a href="https://www.facebook.com/emmanuel.l.gonzales.175215" target="_blank">View Profile</a>
+‎</div>
+‎
+‎<button class="voteBtn" onclick="openVote('Emmanuel L Gonzalez')">VOTE</button>
+‎
+‎</div>
+‎
+‎<!-- Candidate 2 -->
+‎
+‎<div class="card">
+‎
+‎<div class="name">2. Alfaria Chinatzu</div>
+‎<div class="position">Running for: MODERATOR</div>
+‎
+‎<div class="vote">Votes: 36</div>
+‎
+‎<div class="people">
+‎Facebook:
+‎<a href="https://www.facebook.com/profile.php?id=61578034502596" target="_blank">View Profile</a>
+‎</div>
+‎
+‎<button class="voteBtn" onclick="openVote('Alfaria Chinatzu')">VOTE</button>
+‎
+‎</div>
+‎
+‎<!-- Candidate 3 -->
+‎
+‎<div class="card">
+‎
+‎<div class="name">3. Francisco L Protacio</div>
+‎<div class="position">Running for: MODERATOR</div>
+‎
+‎<div class="vote">Votes: 21</div>
+‎
+‎<div class="people">
+‎Facebook:
+‎<a href="https://www.facebook.com/profile.php?id=61571827438502" target="_blank">View Profile</a>
+‎</div>
+‎
+‎<button class="voteBtn" onclick="openVote('Francisco L Protacio')">VOTE</button>
+‎
+‎</div>
+‎
+‎<!-- Candidate 4 -->
+‎
+‎<div class="card">
+‎
+‎<div class="name">4. Jared Cortez</div>
+‎<div class="position">Running for: MODERATOR</div>
+‎
+‎<div class="vote">Votes: 20</div>
+‎
+‎<div class="people">
+‎Facebook:
+‎<a href="https://www.facebook.com/profile.php?id=61588608602340" target="_blank">View Profile</a>
+‎</div>
+‎
+‎<button class="voteBtn" onclick="openVote('Jared Cortez')">VOTE</button>
+‎
+‎</div>
+‎
+‎</div>
+‎
+‎<!-- Voting Dashboard -->
+‎
+‎<section id="voteSection">
+‎
+‎<div class="formBox">
+‎
+‎<h2>Submit Your Vote</h2>
+‎
+‎<p id="candidateName" style="font-weight:bold;margin-bottom:10px;"></p>
+‎
+‎<label>Your Name</label>
+‎<input type="text" placeholder="Enter your name">
+‎
+‎<label>Do you joined at group?</label>
+‎
+‎<div>
+‎<input type="checkbox"> Yes
+‎</div>
+‎
+‎<div>
+‎<input type="checkbox"> No
+‎</div>
+‎
+‎<br>
+‎
+‎<button class="submitBtn" onclick="submitVote()">Submit Vote</button>
+‎
+‎<div class="message" id="message"></div>
+‎
+‎</div>
+‎
+‎</section>
+‎
+‎<script>
+‎
+‎let selectedCandidate="";
+‎
+‎function openVote(name){
+‎
+‎selectedCandidate=name;
+‎
+‎document.getElementById("voteSection").style.display="block";
+‎
+‎document.getElementById("candidateName").innerText="Voting for: "+name;
+‎
+‎document.getElementById("voteSection").scrollIntoView({behavior:"smooth"});
+‎
+‎}
+‎
+‎function submitVote(){
+‎
+‎document.getElementById("message").innerText=
+‎"Your vote for "+selectedCandidate+" has been submitted. Vote number will update at 3/4PM.";
+‎
+‎}
+‎
+‎</script>
+‎
+‎</body>
+‎</html>
